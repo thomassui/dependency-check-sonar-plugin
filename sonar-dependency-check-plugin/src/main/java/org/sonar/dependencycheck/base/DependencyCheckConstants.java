@@ -22,21 +22,48 @@ package org.sonar.dependencycheck.base;
 public final class DependencyCheckConstants {
 
     public static final String JSON_REPORT_PATH_PROPERTY = "sonar.dependencyCheck.jsonReportPath";
+    
+    // New 5-level severity mapping properties
+    public static final String SEVERITY_BLOCKER = "sonar.dependencyCheck.severity.blocker";
+    public static final String SEVERITY_CRITICAL = "sonar.dependencyCheck.severity.critical";
+    public static final String SEVERITY_MAJOR = "sonar.dependencyCheck.severity.major";
+    public static final String SEVERITY_MINOR = "sonar.dependencyCheck.severity.minor";
+    public static final String SEVERITY_INFO = "sonar.dependencyCheck.severity.info";
+    
+    // Deprecated: Old 3-level severity properties (for backward compatibility)
+    @Deprecated(since = "5.1.0", forRemoval = true)
     public static final String SEVERITY_HIGH = "sonar.dependencyCheck.severity.high";
+    @Deprecated(since = "5.1.0", forRemoval = true)
     public static final String SEVERITY_MEDIUM = "sonar.dependencyCheck.severity.medium";
+    @Deprecated(since = "5.1.0", forRemoval = true)
     public static final String SEVERITY_LOW = "sonar.dependencyCheck.severity.low";
+    
     public static final String SUMMARIZE_PROPERTY = "sonar.dependencyCheck.summarize";
     public static final String SKIP_PROPERTY = "sonar.dependencyCheck.skip";
     public static final String SECURITY_HOTSPOT = "sonar.dependencyCheck.securityHotspot";
     public static final String USE_FILEPATH = "sonar.dependencyCheck.useFilePath";
 
+    // New 5-level severity defaults
+    public static final Float SEVERITY_BLOCKER_DEFAULT = 9.0f;
+    public static final Float SEVERITY_CRITICAL_DEFAULT = 7.0f;
+    public static final Float SEVERITY_MAJOR_DEFAULT = 4.0f;
+    public static final Float SEVERITY_MINOR_DEFAULT = 1.0f;
+    public static final Float SEVERITY_INFO_DEFAULT = 0.0f;
+    
+    // Deprecated: Old 3-level severity defaults
+    @Deprecated(since = "5.1.0", forRemoval = true)
     public static final Float SEVERITY_HIGH_DEFAULT = 7.0f;
+    @Deprecated(since = "5.1.0", forRemoval = true)
     public static final Float SEVERITY_MEDIUM_DEFAULT = 4.0f;
+    @Deprecated(since = "5.1.0", forRemoval = true)
     public static final Float SEVERITY_LOW_DEFAULT = 0.0f;
 
-    public static final Float CVSS_CRITICAL_SCORE = 9.0f;
+    public static final Float CVSS_BLOCKER_SCORE = 9.0f;
+    public static final Float CVSS_CRITICAL_SCORE = 7.0f;
     public static final Float CVSS_HIGH_SCORE = 7.0f;
+    public static final Float CVSS_MAJOR_SCORE = 4.0f;
     public static final Float CVSS_MEDIUM_SCORE = 4.0f;
+    public static final Float CVSS_MINOR_SCORE = 1.0f;
     public static final Float CVSS_LOW_SCORE = 0.1f;
 
     public static final String JSON_REPORT_PATH_DEFAULT = "${WORKSPACE}/dependency-check-report.json";
